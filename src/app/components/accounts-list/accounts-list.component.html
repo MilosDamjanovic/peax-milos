@@ -1,0 +1,13 @@
+<mat-toolbar color="primary">Accounts List</mat-toolbar>
+  <div class="container h-container">
+      <filter-accounts
+        [accounts]="accounts"
+        (filterAccountEvent)="applyFilter($event)"
+      ></filter-accounts>
+    <table-component
+      [filteredAccounts]="(filteredAccounts$ | async)"
+      (accountClicked)="openAccountDetails($event)"
+    ></table-component>
+  </div>
+
+
